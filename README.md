@@ -23,7 +23,7 @@ A React application for building dynamic questionnaires with recursive True/Fals
 ### Install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/nested-form-builder.git
+git clone https://github.com/harshul1120/nested-form.git
 cd nested-form-builder
 npm install
 ```
