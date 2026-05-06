@@ -61,14 +61,12 @@ npm install
 Start the development server:
 
 ```bash
-npm start
+$env:PORT=5173; npm start
 ```
 
-The application will run at:
+The application will run at
 
-```text
-http://localhost:3000
-```
+
 
 ---
 
