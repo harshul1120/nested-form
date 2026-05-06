@@ -12,12 +12,16 @@ function generateId() {
 
 function createQuestion() {
   return {
-    id: generateId(),
-    text: '',
-    type: 'short',    // 'short' | 'tf'
-    tfAnswer: null,   // null | 'true' | 'false'
-    children: [],
-  };
+  id: generateId(),
+  text: '',
+  type: 'short',
+
+  shortAnswer: '',
+
+  tfAnswer: null,
+
+  children: [],
+};
 }
 
 /**
@@ -28,7 +32,15 @@ function flattenForReview(questions, prefix = '') {
   let result = [];
   questions.forEach((q, i) => {
     const num = prefix ? `${prefix}.${i + 1}` : `Q${i + 1}`;
-    result.push({ num, text: q.text || '(no text entered)', type: q.type, tfAnswer: q.tfAnswer });
+    result.push({
+  num,
+  text: q.text || '(no text entered)',
+  type: q.type,
+
+  tfAnswer: q.tfAnswer,
+
+  shortAnswer: q.shortAnswer
+});
     if (q.children && q.children.length > 0) {
       result = result.concat(flattenForReview(q.children, num));
     }
@@ -234,6 +246,11 @@ function App() {
                     → answered: <strong>{item.tfAnswer}</strong>
                   </span>
                 )}
+                {item.type === 'short' && item.shortAnswer && (
+  <span className="review-answer">
+    → answer: <strong>{item.shortAnswer}</strong>
+  </span>
+)}
               </div>
             ))
           )}
