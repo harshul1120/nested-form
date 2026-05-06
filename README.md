@@ -64,10 +64,6 @@ Start the development server:
 $env:PORT=5173; npm start
 ```
 
-The application will run at
-
-
-
 ---
 
 ## Production Build
