@@ -92,6 +92,18 @@ function QuestionNode({ question, index, prefix, depth = 0, onUpdate, onDelete }
       </div>
 
       {/* True/False radio row */}
+      {question.type === 'short' && (
+  <div className="short-answer-box">
+    <textarea
+      placeholder="Write short answer..."
+      value={question.shortAnswer}
+      onChange={(e) =>
+        updateField('shortAnswer', e.target.value)
+      }
+      rows="3"
+    />
+  </div>
+)}
       {question.type === 'tf' && (
         <div className="tf-answer">
           <span>Answer:</span>
