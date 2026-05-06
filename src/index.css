@@ -354,6 +354,42 @@ select:focus {
 .question-card {
   animation: fadeUp 0.3s ease;
 }
+.short-answer-box {
+  margin-top: 12px;
+}
+
+.short-answer-box textarea {
+
+  width: 100%;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 14px;
+
+  padding: 12px;
+
+  font-size: 14px;
+
+  font-family: inherit;
+
+  resize: vertical;
+
+  min-height: 90px;
+
+  background: rgba(255,255,255,0.9);
+
+  transition: all 0.2s ease;
+}
+
+.short-answer-box textarea:focus {
+
+  outline: none;
+
+  border-color: #cd479c;
+
+  box-shadow:
+    0 0 0 4px rgba(124,58,237,0.12);
+}
 
 @keyframes fadeUp {
 
